@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Scraping with Flask and BeautifulSoup</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f9fc;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+    font-size: 28px;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 10px;
+}
+
+input[type="submit"] {
+    background-color: #0084FF;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+    padding: 10px 20px;
+}
+
+h2 {
+    background-color: #f7f9fc;
+    border-bottom: 1px solid #e5e7eb;
+    color: #333;
+    font-size: 24px;
+    padding: 10px 0;
+    margin: 20px 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 20px;
+}
+
+a {
+    color: #0084FF;
+    text-decoration: none;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Web Scraping with Flask and BeautifulSoup</h1>
+    <div class="container">
+        <form method="POST">
+            <label for="url">Enter URL: </label>
+            <input type="text" name="url" id="url">
+            <input type="submit" value="Scrape">
+        </form>
+        
+        <h2>Scraped Hyperlinks:</h2>
+        <div class="content">
+            <ul>
+                {% for link in link_data %}
+                    <li>
+                        <h4>{{ link['text'] }}</h4>
+                        <p>URL: <a href="{{ link['href'] }}" target="_blank">{{ link['href'] }}</a></p>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        
+        <div class="footer">
+            <a href="https://github.com/asura-kuo" target="_blank">by Alessio Liu</a>
+        </div>
+    </div>
+</body>
+</html>
